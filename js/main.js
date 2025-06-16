@@ -235,12 +235,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (e.key === 'Escape') closeCongratsModal();
 	});
 
-	// ===== MULTI-PAGE FORM HANDLING =====
-	// #mainForm can exist separately for another page navigation
+	// // ===== MULTI-PAGE FORM HANDLING =====
+	// // #mainForm can exist separately for another page navigation
+	// document.getElementById('mainForm')?.addEventListener('submit', function (e) {
+	// 	e.preventDefault();
+	// 	const name = document.getElementById('userName')?.value || document.getElementById('name')?.value;
+	// 	const phone = document.getElementById('userPhone')?.value || document.getElementById('phone')?.value;
+	// 	window.location.href = `page2.html?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`;
+	// });
+
+	// URL dan query parametrlarga kirish
+	const urlParams = new URLSearchParams(window.location.search);
+	const name = urlParams.get('name');
+	const phone = urlParams.get('phone');
+
+	// Agar qiymatlar mavjud bo'lsa, inputlarga yozamiz
+	if (name) document.getElementById('name').value = name;
+	if (phone) document.getElementById('phone').value = phone;
+
 	document.getElementById('mainForm')?.addEventListener('submit', function (e) {
 		e.preventDefault();
-		const name = document.getElementById('userName')?.value || document.getElementById('name')?.value;
-		const phone = document.getElementById('userPhone')?.value || document.getElementById('phone')?.value;
+
+		const formData = new FormData(this);
+		const name = formData.get('userName');
+		const phone = formData.get('userPhone');
+
 		window.location.href = `page2.html?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`;
 	});
 });

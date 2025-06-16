@@ -123,16 +123,16 @@
 						</div>
 					</div>
 					<div class="pol__right">
-						<form class="consultation-form" autocomplete="off">
+						<form class="consultation-form" name="submit-to-google-sheet" autocomplete="off">
 							<div class="form-row">
 								<h2 class="title-none">Заполните заявку</h2>
 								<div class="form-group">
 									<label for="name">Ваше имя</label>
-									<input type="text" id="name" placeholder="Ibrohim" class="input" />
+									<input type="text" name="ism" id="name" placeholder="Ibrohim" class="input" />
 								</div>
 								<div class="form-group">
 									<label for="phone">Номер телефона</label>
-									<input type="tel" id="phone" placeholder="+998 99 842 79 79" class="input" />
+									<input type="tel" name="tel" id="phone" placeholder="+998 99 842 79 79" class="input" />
 								</div>
 							</div>
 							<div class="form-block">
@@ -155,7 +155,7 @@
 									</label>
 								</div>
 							</div>
-							<button class="submit-btn" type="button" id="openModalBtn">Забронировать консультацию за 9$</button>
+							<button class="submit-btn" type="submit" id="openModalBtn">Забронировать консультацию за 9$</button>
 						</form>
 					</div>
 				</div>
@@ -262,17 +262,21 @@
 		</div>
 		<!-- Splide JS -->
 		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-		<script>
-			// URLdan query parametrlarini olish
-			const params = new URLSearchParams(window.location.search);
-			const name = params.get('name');
-			const phone = params.get('phone');
-
-			// Inputlarga yozish
-			if (name) document.getElementById('name').value = name;
-			if (phone) document.getElementById('phone').value = phone;
-		</script>
+		<script></script>
 		<script src="js/main.js"></script>
+
+		<script>
+			const scriptURL =
+				'https://script.google.com/macros/s/AKfycbzdE7uphXyP0kjuv1S4FjDbZxsxdJCAZvivzMWp4Fk1muOfeJVYAdTR9rUhiu5W9257Xg/exec';
+			const form = document.forms['submit-to-google-sheet'];
+
+			form.addEventListener('submit', e => {
+				e.preventDefault();
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.then(response => console.log('Success!', response))
+					.catch(error => console.error('Error!', error.message));
+			});
+		</script>
 	</body>
 </html>
 <!--  -->
