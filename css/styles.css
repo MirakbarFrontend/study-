@@ -303,6 +303,7 @@ a {
 	padding: 40px 20px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .main-wrapper-res {
@@ -949,9 +950,7 @@ a {
 	.padding {
 		padding: 40px 20px 158px;
 	}
-	/* .none {
-		display: none;
-	} */
+
 	.main-wrapper__title {
 		font-size: 24px;
 	}
@@ -974,7 +973,6 @@ a {
 
 	.form-container {
 		position: absolute;
-
 		bottom: -320px;
 		padding: 16px;
 		margin-top: 20px;
@@ -999,12 +997,7 @@ a {
 	.info-block {
 		display: none;
 	}
-	.main-wrapper__flex {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column-reverse;
-	}
+
 	.image-section img {
 		width: 310px;
 		height: 230px;
@@ -1190,6 +1183,12 @@ a {
 	.congrats-btn {
 		gap: 8px;
 		padding: 17px 65px;
+	}
+}
+
+@media (max-width: 697px) {
+	.form-container {
+		left: -1px;
 	}
 }
 
