@@ -732,9 +732,6 @@ a {
 	transform: scale(0.97);
 }
 
-.modal {
-	margin-top: 140px;
-}
 .congrats-overlay {
 	position: fixed;
 	z-index: 1200;
