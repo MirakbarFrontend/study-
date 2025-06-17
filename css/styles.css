@@ -1184,14 +1184,18 @@ a {
 		gap: 8px;
 		padding: 17px 65px;
 	}
+	.main-wrapper__flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column-reverse;
+	}
 }
-
 @media (max-width: 697px) {
 	.form-container {
 		left: -1px;
 	}
 }
-
 @media (max-width: 480px) {
 	.modal {
 		padding: 20px;
