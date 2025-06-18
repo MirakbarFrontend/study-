@@ -83,7 +83,8 @@ a {
 .pol {
 	padding-top: 40px;
 	padding-bottom: 60px;
-	font-family: Unbounded;
+}
+.pol__title {
 	font-weight: 700;
 	font-size: 32px;
 	margin-bottom: 8px;
@@ -92,7 +93,6 @@ a {
 	color: #2094ff;
 }
 .pol__text {
-	font-family: Inter;
 	font-weight: 400;
 	font-size: 20px;
 	color: #000;
@@ -122,9 +122,10 @@ a {
 	height: 36px;
 	margin-right: 8px;
 }
-.pol__left-list-item a {
+.pol__left-list-item p {
 	font-weight: 500;
 	font-size: 16px;
+	line-height: 100%;
 	color: #000;
 }
 .pol__left-info {
@@ -134,8 +135,8 @@ a {
 	margin-top: 16px;
 	border: 2px solid transparent;
 	border-image: linear-gradient(90deg, #1f94ff 0%, #e84bc1 100%);
-	border-image-slice: 1;
 	border-radius: 8px;
+	border-image-slice: 1;
 }
 .pol__left-info-text {
 	font-weight: 500;
@@ -498,7 +499,7 @@ a {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.5); /* Orqa fon */
+	background-color: rgba(0, 0, 0, 0.5);
 	padding-top: 200px;
 }
 
@@ -648,6 +649,7 @@ a {
 	text-decoration-thickness: 0%;
 	text-decoration-skip-ink: auto;
 }
+
 
 .submit {
 	padding: 16px 154px;
