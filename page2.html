@@ -167,6 +167,10 @@
 									</label>
 								</div>
 							</div>
+
+
+							
+
 							<button class="submit-btn" type="submit" id="openModalBtn">Забронировать консультацию за 9$</button>
 						</form>
 					</div>
@@ -225,7 +229,7 @@
 							<p class="upload-text">Загрузить чек оплаты (PDF, JPG, PNG)</p>
 						</div>
 					</label>
-					<input type="file" id="file-upload" accept=".pdf,.jpg,.jpeg,.png" hidden />
+					<input type="file" name="rasm" id="file-upload" accept=".pdf,.jpg,.jpeg,.png" hidden />
 				</div>
 
 				<button class="submit" id="openModal2Btn">Отправить чек и подтвердить</button>
@@ -233,8 +237,10 @@
 				<div class="divider">У вас всё ещё есть вопросы?</div>
 
 				<div class="links">
-					<a href="https://web.telegram.org/k/" target="_blank" class="telegram">Спросите через Telegram</a>
-					<a href="https://web.whatsapp.com/" target="_blank" class="whatsapp">Спросите через WhatsApp</a>
+					<img src="img/page2/open-telegram.svg" alt="telegram" width="20" height="20" />
+					<a href="https://web.telegram.org/k/" target="_blank" class="telegram"> Спросите через Telegram</a>
+					<img src="img/page2/open-whatsap.svg" alt="whatsapp" width="20" height="20" />
+					<a href="https://web.whatsapp.com/" target="_blank" class="whatsapp"> Спросите через WhatsApp</a>
 				</div>
 			</div>
 		</div>
@@ -279,7 +285,7 @@
 
 		<script>
 			const scriptURL =
-				'https://script.google.com/macros/s/AKfycbzdE7uphXyP0kjuv1S4FjDbZxsxdJCAZvivzMWp4Fk1muOfeJVYAdTR9rUhiu5W9257Xg/exec';
+				'https://script.google.com/macros/s/AKfycbyMifUKpJTMPLFk9LteReKPtsUn-lC5piZSPIs0WNJ2daJrELooy9iUbyEFvr7AHuKR/exec';
 			const form = document.forms['submit-to-google-sheet'];
 
 			form.addEventListener('submit', e => {
